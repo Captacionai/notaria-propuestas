@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notaría García Morlesín — Selección de diseño</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital@1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0F0E0C;
+  --body: #5A5854;
+  --mute: #9A968F;
+  --taupe: #807E79;
+  --cream: #D2C3B2;
+  --paper: #FFFFFF;
+  --paper-warm: #F7F3EC;
+  --rule: rgba(15,14,12,0.08);
+}
+*,*::before,*::after { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--body);
+  background: var(--paper-warm);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 48px); }
+
+.head {
+  padding: clamp(56px, 9vw, 96px) 0 clamp(40px, 6vw, 72px);
+  text-align: center;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+.head h1 {
+  font-family: 'Abril Fatface', serif;
+  font-weight: 400;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--ink);
+  line-height: 1.05;
+  max-width: 18ch;
+  margin: 0 auto 24px;
+  letter-spacing: -0.005em;
+}
+.head h1 em {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--taupe);
+}
+.head p {
+  max-width: 56ch;
+  margin: 0 auto;
+  font-size: clamp(16px, 1.2vw, 18px);
+  color: var(--body);
+}
+.head .meta {
+  margin-top: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--mute);
+  font-weight: 500;
+  padding: 10px 20px;
+  border: 1px solid var(--rule);
+  border-radius: 100px;
+}
+.head .meta .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--taupe); }
+
+.options {
+  padding: clamp(56px, 8vw, 96px) 0;
+}
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.option {
+  background: var(--paper);
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: all 0.4s cubic-bezier(.2,.7,.2,1);
+  position: relative;
+  overflow: hidden;
+}
+.option:hover {
+  transform: translateY(-6px);
+  border-color: var(--taupe);
+  box-shadow: 0 12px 48px rgba(15,14,12,0.06);
+}
+.option .badge {
+  display: inline-flex;
+  width: fit-content;
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 600;
+  background: var(--paper-warm);
+  padding: 8px 14px;
+  border-radius: 100px;
+}
+.option h2 {
+  font-family: 'Abril Fatface', serif;
+  font-weight: 400;
+  font-size: clamp(1.875rem, 3vw, 2.5rem);
+  color: var(--ink);
+  line-height: 1.05;
+  letter-spacing: -0.005em;
+}
+.option .vibe {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--taupe);
+  line-height: 1.4;
+  font-weight: 400;
+}
+.option .description {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--body);
+}
+.option .pros {
+  display: grid;
+  gap: 10px;
+  padding: 16px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.option .pros .pro {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--body);
+  line-height: 1.5;
+}
+.option .pros .pro::before {
+  content: '';
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--taupe);
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+.option .tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+.option .tag {
+  font-size: 11px;
+  background: var(--paper-warm);
+  padding: 6px 12px;
+  border-radius: 100px;
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.option .btn {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 24px;
+  background: var(--ink);
+  color: white;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: all 0.3s ease;
+}
+.option .btn::after { content: '→'; transition: transform 0.3s ease; }
+.option .btn:hover { background: var(--taupe); }
+.option .btn:hover::after { transform: translateX(4px); }
+
+/* Preview thumbnail */
+.option .thumb {
+  width: 100%;
+  aspect-ratio: 16/10;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.option .thumb .stamp {
+  position: absolute;
+  top: 12px; right: 12px;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(8px);
+  font-size: 9px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 100px;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* v3 thumb — editorial */
+.thumb-v3 {
+  background: linear-gradient(180deg, #F7F3EC 0%, #EDE5D6 100%);
+}
+.thumb-v3::after {
+  content: 'Notaría\Aen Sevilla Este';
+  white-space: pre;
+  position: absolute;
+  inset: 24px;
+  font-family: 'Abril Fatface', serif;
+  font-size: 38px;
+  line-height: 0.95;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.thumb-v3::before {
+  content: 'I · MMXXVI';
+  position: absolute;
+  bottom: 20px; right: 20px;
+  font-size: 8px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  font-family: 'Inter', monospace;
+  font-weight: 600;
+}
+
+/* v4 thumb — modern */
+.thumb-v4 {
+  background: #FFFFFF;
+  border: 1px solid var(--rule);
+}
+.thumb-v4::after {
+  content: 'Notaría en\ASevilla Este';
+  white-space: pre;
+  position: absolute;
+  inset: 24px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+}
+.thumb-v4::before {
+  content: '●';
+  position: absolute;
+  top: 24px; right: 24px;
+  width: 32px; height: 32px;
+  background: var(--ink);
+  border-radius: 50%;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* v5 thumb — classic */
+.thumb-v5 {
+  background:
+    radial-gradient(circle at 70% 30%, rgba(210,195,178,0.5), transparent 60%),
+    linear-gradient(180deg, #F7F3EC 0%, #EDE5D6 100%);
+}
+.thumb-v5::after {
+  content: 'Notaría en\A Sevilla Este';
+  white-space: pre;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Abril Fatface', serif;
+  font-size: 32px;
+  line-height: 1.1;
+  color: var(--taupe);
+  text-align: center;
+  letter-spacing: -0.005em;
+}
+
+.footer {
+  padding: 40px 0 64px;
+  text-align: center;
+  border-top: 1px solid var(--rule);
+  background: var(--paper);
+}
+.footer p {
+  font-size: 13px;
+  color: var(--mute);
+  letter-spacing: 0.01em;
+}
+.footer strong { color: var(--ink); font-weight: 600; }
+
+@media (max-width: 900px) {
+  .options-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<section class="head">
+  <div class="wrap">
+    <div class="eyebrow">Captacion.ai · Diseño web</div>
+    <h1>Tres propuestas de diseño <em>para su notaría.</em></h1>
+    <p>María Ángeles, le presentamos tres direcciones visuales distintas para la web de la notaría. Las tres respetan la estética que ha indicado (similar a notariacrehuet.es) y el sector notarial, pero cada una con un carácter propio. Haga click en cada una para verla en detalle.</p>
+    <div class="meta">
+      <span class="dot"></span>
+      <span>Tres direcciones · Una notaría</span>
+    </div>
+  </div>
+</section>
+
+<section class="options">
+  <div class="wrap">
+    <div class="options-grid">
+
+      <!-- V3 EDITORIAL -->
+      <article class="option">
+        <div class="thumb thumb-v3">
+          <span class="stamp">v3 · Editorial</span>
+        </div>
+        <span class="badge">Propuesta A</span>
+        <h2>Editorial Magazine</h2>
+        <p class="vibe">"Una notaría con alma de revista de autor."</p>
+        <p class="description">Estilo editorial tipo revista de prestigio (NYT, Monocle, Kinfolk) combinado con ornamentación clásica notarial: números romanos, capítulos, folio, fecha en romanos (MMXXVI), filete decorativo y sello del despacho.</p>
+        <div class="pros">
+          <div class="pro">Tipografía dramática como protagonista (Abril Fatface display + Cormorant italic + Inter labels)</div>
+          <div class="pro">Detalles auténticos del mundo notarial (folio, capítulos, sello)</div>
+          <div class="pro">Memorable, distintiva, premium, "se nota que no es plantilla"</div>
+          <div class="pro">⚠ Más arriesgada que la media notarial — puede gustar mucho o no</div>
+        </div>
+        <div class="tech">
+          <span class="tag">Abril Fatface</span>
+          <span class="tag">Cormorant Italic</span>
+          <span class="tag">Editorial</span>
+          <span class="tag">Distintivo</span>
+        </div>
+        <a href="v3-editorial.html" class="btn">Ver propuesta A</a>
+      </article>
+
+      <!-- V4 MODERN -->
+      <article class="option">
+        <div class="thumb thumb-v4">
+          <span class="stamp">v4 · Modern</span>
+        </div>
+        <span class="badge">Propuesta B</span>
+        <h2>Modern Clean</h2>
+        <p class="vibe">"Una notaría contemporánea, clara y eficiente."</p>
+        <p class="description">Diseño moderno limpio inspirado en mejores prácticas SaaS premium. Tipografía Inter como protagonista, grid 12 columnas, botones pill, tarjetas con bordes suaves, mucho aire blanco. Estilo Apple/Linear adaptado al sector legal.</p>
+        <div class="pros">
+          <div class="pro">Aire fresco moderno sin romper la seriedad notarial</div>
+          <div class="pro">Más cercano a clientes jóvenes/empresariales que buscan rapidez</div>
+          <div class="pro">Forms y CTAs muy claros — alta conversión</div>
+          <div class="pro">Quote/avatar de la notaria como prueba social personal</div>
+        </div>
+        <div class="tech">
+          <span class="tag">Inter Sans</span>
+          <span class="tag">Cards</span>
+          <span class="tag">Moderno</span>
+          <span class="tag">Conversión</span>
+        </div>
+        <a href="v4-modern.html" class="btn">Ver propuesta B</a>
+      </article>
+
+      <!-- V5 CLASSIC -->
+      <article class="option">
+        <div class="thumb thumb-v5">
+          <span class="stamp">v5 · Classic</span>
+        </div>
+        <span class="badge">Propuesta C</span>
+        <h2>Classic Refinado</h2>
+        <p class="vibe">"La estética de Crehuet, pulida y elevada."</p>
+        <p class="description">La opción más cercana visualmente a notariacrehuet.es (su referencia favorita). Replica paleta taupe/crema/beige, Abril Fatface + Poppins 300, hero centrado limpio, grid de servicios con iconos redondeados, sección videofirma elegante, filete ornamental ✦.</p>
+        <div class="pros">
+          <div class="pro">La más cercana a notariacrehuet.es (referencia que indicó)</div>
+          <div class="pro">Atemporal, conservadora, sin riesgos — perfecta para todos los públicos</div>
+          <div class="pro">Iconos circulares en burbujas crema, hover suave</div>
+          <div class="pro">Tipografía y paleta directas de Crehuet, sin reinterpretar</div>
+        </div>
+        <div class="tech">
+          <span class="tag">Abril Fatface</span>
+          <span class="tag">Poppins 300</span>
+          <span class="tag">Crehuet-like</span>
+          <span class="tag">Seguro</span>
+        </div>
+        <a href="v5-classic.html" class="btn">Ver propuesta C</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="footer">
+  <div class="wrap">
+    <p>Preview interno — <strong>Captacion.ai</strong> · Diseño para Notaría García Morlesín</p>
+  </div>
+</section>
+
+</body>
+</html>
