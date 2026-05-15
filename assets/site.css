@@ -177,11 +177,11 @@ nav.menu a:hover, nav.menu a.is-active { border-color: var(--brown); color: var(
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  background: var(--brown);
+  background: var(--primary);
   color: white !important;
   padding: 12px 22px;
   font-weight: 500;
-  border: 1px solid var(--brown);
+  border: 1px solid var(--primary);
   transition: all 0.3s ease;
   white-space: nowrap;
   flex-shrink: 0;
